@@ -8,6 +8,19 @@ public interface IServiceBase<TEntity>
 {
     Task SaveChangesAsync(CancellationToken cancellationToken);
 
+    Task<int> AddEntity(TEntity entity, CancellationToken cancellationToken);
+
+    Task<TEntity?> GetEntityAsync(int entityId, CancellationToken cancellationToken);
+
+    Task<bool> HasEntityAsync(int entityId, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Do modyfikacji entitisów
+    /// </summary>
     DbSet<TEntity> GetEntities();
+
+    /// <summary>
+    /// Do czytania entiti
+    /// </summary>
     IQueryable<TEntity> GetEntitiesQuery();
 }

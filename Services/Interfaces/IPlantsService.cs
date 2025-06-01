@@ -5,5 +5,4 @@ namespace PlantMonitorAPI.Services.Interfaces;
 
 public interface IPlantsService : IServiceBase<Plant>
 {
-    Task AddPlant(Plant plant, CancellationToken cancellationToken);
 }

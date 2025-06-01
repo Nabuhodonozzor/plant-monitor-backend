@@ -1,0 +1,102 @@
+# Najwyższy plik konfiguracyjny dla EditorConfig
+root = true
+
+[*.cs]
+# Automatycznie wstawiamy znak nowej linii na końcu pliku
+insert_final_newline = true
+
+# Deklaracje przestrzeni nazw powinny być na poziomie plików
+csharp_style_namespace_declarations = file_scoped:error
+
+# Primary Constructors - nie chcemy używać konstruktorów podstawowych
+csharp_style_prefer_primary_constructors = false
+
+# CA1062: Walidujemy argumenty w metodach publicznych
+dotnet_code_quality.CA1062.api_surface = public
+# Wyłączamy wymóg walidacji argumentu 'this' w metodach rozszerzeń
+dotnet_code_quality.CA1062.exclude_extension_method_this_parameter = true
+
+# CA1002: Możemy używać dowolnych typów list generycznych według własnego uznania
+dotnet_diagnostic.CA1002.severity = none
+
+# CA1003: Używamy generycznych eventów typu Action<> dla wygody
+dotnet_diagnostic.CA1003.severity = none
+
+# CA1040: Dopuszczamy puste interfejsy, ponieważ są użyteczne w akcjach workflow
+dotnet_diagnostic.CA1040.severity = none
+
+# CA1032: Wyłączamy wymóg implementacji konstruktorów wyjątków
+dotnet_diagnostic.CA1032.severity = none
+
+# CA1052: Typ „Program” nie musi być statyczny ani zapieczętowany
+dotnet_diagnostic.CA1052.severity = none
+
+# CA1054: Parametry z „url” lub „uri” w nazwie nie muszą być typu Uri
+dotnet_diagnostic.CA1054.severity = none
+
+# CA1056: Właściwości z „url” lub „uri” w nazwie nie muszą być typu Uri
+dotnet_diagnostic.CA1056.severity = none
+
+# CA1305: Ignorujemy ostrzeżenia dotyczące potencjalnych różnic w zachowaniu string.Format
+dotnet_diagnostic.CA1305.severity = none
+
+# CA1311: Wyłączamy wymóg specyfikacji kultury lub wersji invariant
+# Jest podobna reguła CA1304
+dotnet_diagnostic.CA1311.severity = none
+
+# CA1720: Nazwa typu może zawierać „Guid”
+dotnet_diagnostic.CA1720.severity = none
+
+# CA1725: Nazwy parametrów nie muszą być zgodne z deklaracją podstawową
+dotnet_diagnostic.CA1725.severity = none
+
+# CA1812: Ignorujemy ostrzeżenia o wewnętrznych klasach bez wystąpień - Dependency Injection może ukrywać instancje
+dotnet_diagnostic.CA1812.severity = none
+
+# CA1819: Właściwości mogą zwracać tablice, jeśli tego wymagamy
+dotnet_diagnostic.CA1819.severity = none
+
+# CA1822: Metody nie muszą być oznaczone jako statyczne, nawet jeśli nie używają danych instancji
+dotnet_diagnostic.CA1822.severity = none
+
+# CA1852: Wewnętrzne klasy nie muszą być zapieczętowane (sealed) - internal ogranicza dostępność, więc ta reguła jest zbędna
+dotnet_diagnostic.CA1852.severity = none
+
+# Propozycje zmiany Any na Length bie mają być warningiem tylko ewentualną sugestią
+dotnet_diagnostic.CA1860.severity = suggestion
+
+# CA2007: Ignorujemy wymóg używania ConfigureAwait w oczekiwanych zadaniach
+dotnet_diagnostic.CA2007.severity = none
+
+# CA2227: Nie chcemy ograniczenia aby kolekcje były tylko do odczytu - takie ograniczenie mamy tylko dla katalogu Entity
+dotnet_diagnostic.CA2227.severity = none
+
+# IDE0002: Mamy klasy które dziedziczą statyczne lementy LstExpressions, Dictionary provider nie chcemy dla nich "upraszczać" dostępu
+dotnet_diagnostic.IDE0002.severity = none
+
+# IDE0005: Ma krzyczeć o ieużywanych namespace
+dotnet_diagnostic.IDE0005.severity = warning
+
+# IDE0003: Nie chcemy podpowiedzi dotyczących uproszczenia nazw
+dotnet_diagnostic.IDE0003.severity = none
+
+# IDE0057: Ignorujemy sugestie dotyczące uproszczenia wywołania Substring
+dotnet_diagnostic.IDE0057.severity = none
+
+# RCS1077: Nie optymalizujemy wywołań metod LINQ
+dotnet_diagnostic.RCS1077.severity = none
+
+# IDE0130: Chcemy, aby przestrzenie nazw były zgodne z lokalizacją plików, preferujemy ostrzeżenie
+dotnet_diagnostic.IDE0130.severity = warning
+
+# RCS1090: Ignorujemy wymóg wywołania ConfigureAwait(false)
+dotnet_diagnostic.RCS1090.severity = none
+
+# RCS1102: Klasy nie muszą być statyczne
+dotnet_diagnostic.RCS1102.severity = none
+
+# RCS1194: Wyłączamy wymóg implementacji konstruktorów wyjątków
+dotnet_diagnostic.RCS1194.severity = none
+
+# ConfigureAwait: Ignorujemy wymóg użycia ConfigureAwait
+dotnet_diagnostic.UseConfigureAwait.severity = none

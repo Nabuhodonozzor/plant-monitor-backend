@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
 using PlantMonitorAPI;
 using PlantMonitorAPI.Database; // Add this using directive if needed
 
@@ -24,5 +23,22 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+app.UseExceptionHandler("/error");
+
+app.Map("/error", (HttpContext context) =>
+{
+    var exceptionFeature = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerFeature>();
+    var error = exceptionFeature?.Error;
+
+    // Return a generic error response
+    context.Response.StatusCode = 500;
+    context.Response.ContentType = "application/json";
+    return Results.Problem(
+        statusCode: 500,
+        title: "An unexpected error occurred.",
+        detail: error?.ToString() // Only show details in dev
+    );
+});
 
 app.Run();

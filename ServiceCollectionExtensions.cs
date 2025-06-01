@@ -18,6 +18,7 @@ public static class SerivceCollectionExtensions
     public static IServiceCollection ConfigureServices(this IServiceCollection services)
     {
         services.AddScoped<IPlantsService, PlantsService>();
+        services.AddScoped<ISensorDataService, SensorDataService>();
 
         return services;
     }

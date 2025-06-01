@@ -1,6 +1,5 @@
 namespace PlantMonitorAPI.API;
 
-using System.CodeDom;
 using Microsoft.AspNetCore.Mvc;
 using PlantMonitorAPI.API.Base;
 using PlantMonitorAPI.Requests.PlantRequests;
